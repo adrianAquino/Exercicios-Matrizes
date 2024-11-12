@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro matriz[3][3], linha, coluna, Vtemp
+		inteiro matriz[3][3], linha, coluna = 0, Vtemp
 
 		para(linha = 0; linha < 3; linha++){
 			para(coluna = 0; coluna < 3; coluna++){
@@ -12,7 +12,7 @@ programa
 		}	
 
 		
-    		 escreva("Matriz antes da troca de linhas:\n")
+    		 escreva("Matriz antes da troca: \n")
 		    para(linha = 0; linha < 3; linha++){
 		      para(coluna = 0; coluna < 3; coluna++){
 		        escreva(matriz[linha][coluna], " ")
@@ -20,19 +20,24 @@ programa
 		      escreva("\n")
 		 }
 
-		 para(coluna = 0; coluna < 3; coluna++){
-	      Vtemp = matriz[0][coluna]
-	      matriz[0][coluna] = matriz[1][coluna]
-	      matriz[1][coluna] = Vtemp
-    		}
+		para(linha = 0; linha < 3; linha++){
+			para(coluna = 0; coluna < 3; coluna++){
+				se(matriz[linha][coluna] % 2 == 0){
+					matriz[linha][coluna] += 1
+				}senao{
+					matriz[linha][coluna] -= 1
+				}
+			}
+		}
 
-    		 escreva("Matriz após a troca de linhas:\n")
+		 escreva("Matriz após a troca:\n")
 		    para(linha = 0; linha < 3; linha++){
 		      para(coluna = 0; coluna < 3; coluna++){
 		        escreva(matriz[linha][coluna], " ")
 		      }
 		      escreva("\n")
 		 }
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
